@@ -57,7 +57,88 @@ VALUES
   [WHEN condition2 THEN result]
   [ELSE resultX] 
   END
-    
   
+  SELECT * FROM DEPT
+  ORDER BY
+  CASE DEPARTMENT
+       WHEN 'MARKETING' THEN 1
+       WHEN 'SALES' THEN 2
+       WHEN 'RESEARCH' THEN 3
+       WHEN ' INNOVATION' THEN 4
+       ELSE 5 
+       END, 
+       CITY
+       
+  SELECT FirstName, LastName
+  FROM Employees
+  WHERE Salary > 500;
+  
+  SELECT Model, 
+         EmployeeID
+  FROM Cars
+  WHERE CustomerID = 42
+  AND   Status     = 'Ready';
+  
+  SELECT column_name (s)
+  FROM table1
+  INNER JOIN table2 
+  ON table1.column_name = table2.column_name;
+    
+  SELECT Orders. OrderID, Customers. CustomerName
+  FROM Orders 
+  INNER JOIN Customers ON Orders.CustomersID = Customers.CustomerID; 
+  
+  SELECT column_name (s) 
+  FROM table1
+  LEFT JOIN table2
+  ON table1.column_name = table2.column_name;
+  
+  SELECT Customers.CustomerName, Orders.OrderID
+  FROM Customers
+  LEFT JOIN Orders
+  ON Customers.CustomersID = Orders.CustomersID
+  ORDER BY Customers.CustomerName;
+  
+  SELECT column_name(s)
+  FROM table1
+  RIGHT JOIN table2
+  ON table1.column_name = table2.column_name
+  
+  SELECT Orders.OrdersID, Employees.LastName, Employees.FirstName
+  FROM Orders
+  RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+  ORDER BY Orders.OrderID
+  
+  SEKECT column_name(s)
+  FROM table1
+  FULL OUTER JOIN table2
+  ON table1.column_name = table2.column_name
+  WHERE condition
+  
+  SELECT Customers. CustomerName, Orders. OrderID
+  FROM Customers
+  FULL OURTER JOIN Oders
+  ON Customers.CustomersID=Orders.Orders. CustomersID
+  ORDER BY Customers.CustomerName; 
+  
+  
+   SELECT column_name(s)
+   FROM table_name
+   WHERE condition 
+   GROUP BY column_name (s)
+   ORDER BY column_name (s);
+   
+   SELECT COUNT(CustomerID), Country
+   FROM Customers
+   GROUP BY Country; 
+   
+   SELECT COUNT(CustomerID), Country
+   FROM Customers
+   GROUP BY Country
+   ORDER BY COUNT (CustomerID) DESC;
+   
+   
+   
+   
    
    
