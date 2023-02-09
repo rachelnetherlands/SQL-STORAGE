@@ -7,6 +7,13 @@ CREATE TABLE ItemSales (
   Price FLOAT NOT NULL
 );
 
+ SELECT Id, ItemId, Price,
+      CASE WHEN Price < 10 THEN 'CHEAP' 
+           WHEN Price < 20 THEN 'AFFORDABLE' 
+           ELSE 'EXPENSIVE'
+      END AS PriceRating 
+ FROM ITEMSALES
+   
 INSERT INTO ItemSales (ItemId, Price)
 VALUES
   (100, 34.5),
@@ -14,6 +21,7 @@ VALUES
   (100, 34.5),
   (100, 34.5),
   (145, 10.0);
+  
   ALTER TABLE Employees
     ADD StartingDate date NOT NULL DEFAULT GetDate () ,
     DateOfBirth  date NULL 
@@ -50,11 +58,6 @@ VALUES
   [ELSE resultX] 
   END
     
-   SELECT Id, ItemID, Price,
-      CASE WHEN Price < 10 THEN 'CHEAP' 
-           WHEN Price < 20 THEN 'AFFORDABLE' 
-           ELSE 'EXPENSIVE'
-      END AS PriceRating 
-   FROM ITEMSALES
+  
    
    
