@@ -1,5 +1,6 @@
 # SQL-STORAGE
 - SQL Assignments/ Code 
+
 CREATE TABLE ItemSales (
   Id INT AUTO_INCREMENT PRIMARY KEY,
   ItemId INT NOT NULL,
