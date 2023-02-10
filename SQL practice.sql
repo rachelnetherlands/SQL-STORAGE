@@ -23,7 +23,7 @@ FROM client
 WHERE client.branch_id = (
   SELECT branch.branch_id
   FROM branch
-  WHERE branch.branch_id = 102; 
+  WHERE branch.branch_id = 102
 ); 
 
 --ON Delete
