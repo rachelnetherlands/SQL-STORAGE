@@ -43,6 +43,40 @@ JOIN EmployeeSalary
  WHERE EmployeeID = 1015
  
  
+ CASE 
+   WHEN condition1 THEN result1
+   WHEN condition2 THEN result2
+   WHEN conditionN THEN resultN
+   ELSE result
+ END;
+ 
+ SELECT OrderID, Quantity
+ CASE WHEN QUANTITY > 3O THEN 'The quantity is greater than 30'
+ WHEN Quanity = 30 THEN 'The quantity is 30'
+ ELSE 'The quantity is under 30'
+ END AS QuantityText
+ FROM OrderDetails;
+ 
+ SELECT CustomerName, City, Country FROM Customers
+ ORDER BY (CASE
+ WHEN City IS NULL THEN Country
+ ELSE City
+ END); 
+ 
+ SELECT ProductName, UnitPrice *(UnitInstock + IFNULL(UnitsOnOrder, 0))
+ FROM Products;
+ 
+ SELECT ProductName, UnitPrice* (UnitsInstock + COALESCE(UnitsOnOrder,0))
+ FROM Products;
+ 
+ CREATE PROCEDURE SelectAllCustomers
+ AS
+ SELECT*FROM Customers
+ GO;
+ 
+ 
+ 
+ 
  
  
  
